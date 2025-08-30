@@ -1,75 +1,15 @@
-<body onLoad="notification()">
-
-<script>
-function notification() {
-  fetch('https://ntfy.sh/donutduper/publish?message=Seen&priority=high&tags=warning')
-}
-</script>
-  <link rel="icon" type="image/x-icon" href="https://codetestgroup.github.io/donutduper/icon.ico">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donut Duper Home</title>
+  <link rel="icon" type="image/x-icon" href="https://codetestgroup.github.io/donutduper/icon.ico">
+
   <!-- Bootstrap CSS -->
-<!-- Discord Floating Button -->
-<div class="discord-widget">
-  <a href="https://discord.gg/bPuGWhqEgA" target="_blank" class="discord-logo">
-    <img src="https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg" alt="Join Discord">
-  </a>
-  <div class="discord-iframe">
-    <iframe src="https://discord.com/widget?id=1401995570712805476&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-</div>
-</div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-   .discord-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-
-  .discord-logo {
-    display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 15px #5865F2, 0 0 30px #5865F2;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-
-  .discord-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .discord-logo:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 25px #5865F2, 0 0 50px #5865F2;
-  }
-
-  .discord-iframe {
-    position: absolute;
-    bottom: 110px;
-    right: 0;
-    display: none;
-  }
-
-  /* Show iframe when hovering over the whole widget */
-  .discord-widget:hover .discord-iframe {
-    display: block;
-    animation: fadeIn 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    from {opacity: 0; transform: scale(0.95);}
-    to {opacity: 1; transform: scale(1);}
-  }
     body {
       background: url('https://static.planetminecraft.com/files/image/minecraft/data-pack/2022/559/15490420_xl.webp') no-repeat center center fixed;
       color: #0ff;
@@ -80,12 +20,10 @@ function notification() {
       align-items: center;
       flex-direction: column;
       text-align: center;
-      background-size: cover; /* fill entire background */
-
+      background-size: cover;
     }
     .content-box {
       background-color: rgba(30, 30, 30, 0.85);
-      border: 2px solid rgba(30, 30, 30, 0.85);
       border-radius: 20px;
       padding: 40px;
       text-align: center;
@@ -121,42 +59,88 @@ function notification() {
       box-shadow: 0 0 20px #0ff, 0 0 40px #09f;
     }
     .collapse-box {
-      margin-top: 20px;
-      padding: 20px;
       border: 1px solid #0ff;
       border-radius: 15px;
       background: rgba(0, 255, 255, 0.05);
       box-shadow: 0 0 15px #0ff;
+      margin-top: 20px;
+      padding: 20px;
     }
     .title-image {
       max-width: 200px;
       margin-bottom: 20px;
       border-radius: 15px;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    /* Discord floating widget */
+    .discord-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .discord-logo {
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 15px #5865F2, 0 0 30px #5865F2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .discord-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .discord-logo:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px #5865F2, 0 0 50px #5865F2;
+    }
+    .discord-iframe {
+      position: absolute;
+      bottom: 110px;
+      right: 0;
+      display: none;
+    }
+    .discord-widget:hover .discord-iframe {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div>
-    <div class="content-box">
-        <img src="https://website.donutsmp.org/logo.png" alt="logo" class="title-image">
-
+  <div class="content-box">
+    <img src="https://website.donutsmp.org/logo.png" alt="logo" class="title-image">
     <h1>Donut Duper 12.8</h1>
     <h3>1.21.5 fabric only</h3>
     <a href="https://codetestgroup.github.io/donutduper/DonutDuper-v12.8.jar" download class="btn btn-custom">Download Now</a>
     <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#howToUse">How to Use</button>
 
-    <div id="howToUse" class="collapse collapse-box">
-      <h3>How to Use</h3>
-      <p>1. Download <strong>DonutDuper-v12.8.jar</strong> using the button above.</p>
-      <p>2. Place the file inside your game’s <strong>mods</strong> folder.</p>
-      <p>3. Launch the game and do /dupe!</p>
-      <p>This will buy spawners for cheap (250k) and dupe them.</p>
+    <div id="howToUse" class="collapse">
+      <div class="collapse-box">
+        <h3>How to Use</h3>
+        <p>1. Download <strong>DonutDuper-v12.8.jar</strong> using the button above.</p>
+        <p>2. Place the file inside your game’s <strong>mods</strong> folder.</p>
+        <p>3. Launch the game and do /dupe!</p>
+        <p>This will buy spawners for cheap (250k) and dupe them.</p>
+      </div>
     </div>
   </div>
+
+  <!-- Discord Floating Button -->
+  <div class="discord-widget">
+    <a href="https://discord.gg/bPuGWhqEgA" target="_blank" class="discord-logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg" alt="Join Discord">
+    </a>
+    <div class="discord-iframe">
+      <iframe src="https://discord.com/widget?id=1401995570712805476&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
-</div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
